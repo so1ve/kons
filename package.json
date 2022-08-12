@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "packageManager": "pnpm@7.9.0",
   "author": "Ray <nn_201312@163.com> (@so1ve)",
-  "description": "",
+  "description": "An elegant console logger.",
   "keywords": [
     "console",
     "logger",

@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/kons?color=a1b858&label=)](https://www.npmjs.com/package/kons)
 
-An elegant console logger for Node.js.
+An elegant console logger.
 
 ## Features
 
