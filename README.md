@@ -43,12 +43,12 @@ Output:
 ### Advanced Usage
 
 ```ts
-import { createLogType } from "kons";
+import { createFormatter } from "kons";
 
 // Parameter 1: Log type
-// Parameter 2: Log color, see [picocolors](https://npmjs.com/package/picocolors) for available colors
-// Parameter 3?: Log target, a function that accepts a string
-const myLog = createLogType("myLog", "cyan", console.info);
+// Parameter 2: Log background color, see [picocolors](https://npmjs.com/package/picocolors) for available colors
+// Parameter 3?: Log options, see types for more information
+const myLog = createFormatter("myLog", "cyan", { target: console.info, textColor: "green" });
 ```
 
 ## License
