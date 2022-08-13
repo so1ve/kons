@@ -15,7 +15,7 @@ An elegant console logger.
 
 ```console
 # NPM
-$ npm install kons
+$ npm install kons -S
 
 # Yarn
 $ yarn add kons
