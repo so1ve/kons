@@ -1,6 +1,6 @@
 {
   "name": "kons",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "packageManager": "pnpm@7.9.0",
   "author": "Ray <nn_201312@163.com> (@so1ve)",
   "description": "An elegant console logger.",
