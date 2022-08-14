@@ -29,7 +29,7 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
-    "consola": {
+    "./consola": {
       "types": "./dist/consola.d.ts",
       "require": "./dist/consola.cjs",
       "import": "./dist/consola.mjs"
