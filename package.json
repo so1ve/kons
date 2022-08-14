@@ -28,6 +28,11 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
+    },
+    "consola": {
+      "types": "./dist/consola.d.ts",
+      "require": "./dist/consola.cjs",
+      "import": "./dist/consola.mjs"
     }
   },
   "main": "./dist/index.cjs",
@@ -56,6 +61,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "figures": "^5.0.0",
+    "pathe": "^0.3.4",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
