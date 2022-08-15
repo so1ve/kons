@@ -13,6 +13,7 @@
     "winston",
     "elegant"
   ],
+  "type": "module",
   "homepage": "https://github.com/so1ve/kons#readme",
   "repository": {
     "type": "git",
@@ -26,16 +27,14 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
     "./consola": {
       "types": "./dist/consola.d.ts",
-      "require": "./dist/consola.cjs",
       "import": "./dist/consola.mjs"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "typesVersions": {
