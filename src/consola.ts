@@ -1,10 +1,8 @@
 import c from "picocolors";
 import figures from "figures";
 
-import type { Color } from "./types";
-import { createBadge, createIcon, parseStack } from "./utils";
-
-type Fn = (...args: any[]) => any;
+import type { Color, Fn } from "./types";
+import { createBadge, createIcon, formatMessage } from "./utils";
 
 export interface Options {
   /**
@@ -20,24 +18,6 @@ export interface Options {
    * An option if the log type should be shown as a badge
    */
   isBadge?: boolean
-}
-
-function formatStack (stack: NonNullable<Error["stack"]>) {
-  return `\n${parseStack(stack)
-    .map(line => `  ${line
-      .replace(/^at +/, m => c.gray(m))
-      .replace(/\((.+)\)/, (_, m) => `(${c.cyan(m)})`)}`,
-    )
-    .join("\n")}`;
-}
-
-function formatMessage (messages: any[]) {
-  return messages.map((m) => {
-    if (m && typeof m.stack === "string") {
-      return `${m.message}\n${formatStack(m.stack)}`;
-    }
-    return m;
-  });
 }
 
 export function createFormatter (iconOrType: string, iconColor: Color, options?: Options) {

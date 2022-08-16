@@ -3,7 +3,7 @@ import c from "picocolors";
 
 import type { Color } from "./types";
 
-export function parseStack (stack: NonNullable<Error["stack"]>) {
+function parseStack (stack: NonNullable<Error["stack"]>) {
   const cwd = process.cwd() + sep;
 
   const lines = stack
@@ -16,6 +16,24 @@ export function parseStack (stack: NonNullable<Error["stack"]>) {
     );
 
   return lines;
+}
+
+function formatStack (stack: NonNullable<Error["stack"]>) {
+  return `\n${parseStack(stack)
+    .map(line => `  ${line
+      .replace(/^at +/, m => c.gray(m))
+      .replace(/\((.+)\)/, (_, m) => `(${c.cyan(m)})`)}`,
+    )
+    .join("\n")}`;
+}
+
+export function formatMessage (messages: any[]) {
+  return messages.map((m) => {
+    if (m && typeof m.stack === "string") {
+      return `${m.message}\n${formatStack(m.stack)}`;
+    }
+    return m;
+  });
 }
 
 export const bracket = (x: string) => x ? `[${x}]` : "";

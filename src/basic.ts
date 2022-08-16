@@ -1,8 +1,7 @@
 import c from "picocolors";
 
-import type { Color } from "./types";
-
-type Fn = (...args: any[]) => any;
+import type { Color, Fn } from "./types";
+import { formatMessage } from "./utils";
 
 export interface Options {
   /**
@@ -21,8 +20,10 @@ export function createFormatter (type: string, bgColor: Color, options?: Options
   const bgColorFormatter = c[bgColor];
   const textColorFormatter = options?.textColor ? c[options.textColor] : bgColorFormatter;
   const target = options?.target || console.log;
+
   return (...messages: any[]) => {
-    target(`${c.bold(c.inverse(bgColorFormatter(` ${upperType} `)))} ${textColorFormatter(messages.join(" "))}\n`);
+    const formattedMessages = formatMessage(messages);
+    target(`${c.bold(c.inverse(bgColorFormatter(` ${upperType} `)))} ${textColorFormatter(formattedMessages.join(" "))}\n`);
   };
 }
 
