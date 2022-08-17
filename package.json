@@ -13,7 +13,6 @@
     "winston",
     "elegant"
   ],
-  "type": "module",
   "homepage": "https://github.com/so1ve/kons#readme",
   "repository": {
     "type": "git",
