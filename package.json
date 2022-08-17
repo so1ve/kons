@@ -61,8 +61,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "figures": "3.2.0",
-    "pathe": "^0.3.4",
+    "@so1ve/figures": "^5.0.0",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {

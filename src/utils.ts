@@ -1,18 +1,14 @@
-import { sep } from "pathe";
 import c from "picocolors";
 
 import type { Color } from "./types";
 
 function parseStack (stack: NonNullable<Error["stack"]>) {
-  const cwd = process.cwd() + sep;
-
   const lines = stack
     .split("\n")
     .splice(1)
     .map(l => l
       .trim()
-      .replace("file://", "")
-      .replace(cwd, ""),
+      .replace("file://", ""),
     );
 
   return lines;
