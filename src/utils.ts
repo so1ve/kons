@@ -2,7 +2,7 @@ import c from "picocolors";
 
 import type { Color } from "./types";
 
-function parseStack (stack: NonNullable<Error["stack"]>) {
+function parseStack (stack: string) {
   const lines = stack
     .split("\n")
     .splice(1)
@@ -14,18 +14,17 @@ function parseStack (stack: NonNullable<Error["stack"]>) {
   return lines;
 }
 
-function formatStack (stack: NonNullable<Error["stack"]>) {
+function formatStack (stack: string) {
   return `\n${parseStack(stack)
     .map(line => `  ${line
-      .replace(/^at +/, m => c.gray(m))
-      .replace(/\((.+)\)/, (_, m) => `(${c.cyan(m)})`)}`,
+      .replace(/^at ([\s\S]+) \((.+)\)/, (_, m1, m2) => c.gray(`at ${m1} (${c.cyan(m2)})`))}`,
     )
     .join("\n")}`;
 }
 
 export function formatMessage (messages: any[]) {
   return messages.map((m) => {
-    if (m && typeof m.stack === "string") {
+    if (typeof m?.stack === "string") {
       return `${m.message}\n${formatStack(m.stack)}`;
     }
     return m;
