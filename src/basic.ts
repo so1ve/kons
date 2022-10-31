@@ -1,7 +1,7 @@
 import c from "picocolors";
 
 import type { Color, Fn } from "./types";
-import { formatMessage } from "./utils";
+import { createBadge, formatMessage } from "./utils";
 
 export interface Options {
   /**
@@ -16,14 +16,13 @@ export interface Options {
 }
 
 export function createFormatter (type: string, bgColor: Color, options?: Options) {
-  const upperType = type.toUpperCase();
   const bgColorFormatter = c[bgColor];
   const textColorFormatter = options?.textColor ? c[options.textColor] : bgColorFormatter;
   const target = options?.target || console.log;
 
   return (...messages: any[]) => {
     const formattedMessages = formatMessage(messages);
-    target(`${c.bold(c.inverse(bgColorFormatter(` ${upperType} `)))} ${textColorFormatter(formattedMessages.join(" "))}\n`);
+    target(`${createBadge(type, bgColor)} ${textColorFormatter(formattedMessages.join(" "))}\n`);
   };
 }
 
