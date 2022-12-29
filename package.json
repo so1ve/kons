@@ -60,8 +60,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "colorette": "^2.0.19",
-    "figures": "5.0.0"
+    "figures": "5.0.0",
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@antfu/ni": "^0.17.2",

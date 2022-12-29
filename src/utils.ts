@@ -1,4 +1,4 @@
-import * as colors from "colorette";
+import colors from "picocolors";
 
 import type { Color } from "./types";
 

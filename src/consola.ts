@@ -1,4 +1,4 @@
-import * as colors from "colorette";
+import colors from "picocolors";
 import figures from "figures";
 
 import type { Color, Fn } from "./types";

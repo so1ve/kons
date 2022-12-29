@@ -12,10 +12,10 @@ importers:
       '@so1ve/eslint-config': ^0.28.1
       '@types/node': ^18.7.1
       bumpp: ^8.2.1
-      colorette: ^2.0.19
       eslint: ^8.21.0
       figures: 5.0.0
       jiti: ^1.14.0
+      picocolors: ^1.0.0
       pnpm: ^7.9.0
       puild: 1.3.0-test.1
       rimraf: ^3.0.2
@@ -24,8 +24,8 @@ importers:
       vite: ^3.0.5
       vitest: ^0.21.1
     dependencies:
-      colorette: 2.0.19
       figures: 5.0.0
+      picocolors: 1.0.0
     devDependencies:
       '@antfu/ni': 0.17.2
       '@babel/types': 7.18.10
@@ -807,10 +807,6 @@ packages:
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
-
-  /colorette/2.0.19:
-    resolution: {integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ==}
-    dev: false
 
   /commondir/1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
@@ -2638,7 +2634,6 @@ packages:
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-    dev: true
 
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
