@@ -1,4 +1,4 @@
-import c from "colorette";
+import * as colors from "colorette";
 
 import type { Color, Fn } from "./types";
 import { createBadge, formatMessage } from "./utils";
@@ -16,8 +16,10 @@ export interface Options {
 }
 
 export function createFormatter (type: string, bgColor: Color, options?: Options) {
-  const bgColorFormatter = c[bgColor];
-  const textColorFormatter = options?.textColor ? c[options.textColor] : bgColorFormatter;
+  // eslint-disable-next-line import/namespace
+  const bgColorFormatter = colors[bgColor];
+  // eslint-disable-next-line import/namespace
+  const textColorFormatter = options?.textColor ? colors[options.textColor] : bgColorFormatter;
   const target = options?.target || console.log;
 
   return (...messages: any[]) => {

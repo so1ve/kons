@@ -1,4 +1,4 @@
-import c from "colorette";
+import * as colors from "colorette";
 import figures from "figures";
 
 import type { Color, Fn } from "./types";
@@ -22,7 +22,8 @@ export interface Options {
 
 export function createFormatter (iconOrType: string, iconColor: Color, options?: Options) {
   const iconFormatter = options?.isBadge ? createBadge : createIcon;
-  const textColorFormatter = options?.textColor ? c[options.textColor] : c[iconColor];
+  // eslint-disable-next-line import/namespace
+  const textColorFormatter = options?.textColor ? colors[options.textColor] : colors[iconColor];
   const target = options?.target || console.log;
 
   return (...messages: any[]) => {
