@@ -2,7 +2,7 @@
   "name": "kons",
   "version": "0.6.2",
   "packageManager": "pnpm@7.9.0",
-  "author": "Ray <nn_201312@163.com> (@so1ve)",
+  "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "An elegant console logger.",
   "keywords": [
     "console",
