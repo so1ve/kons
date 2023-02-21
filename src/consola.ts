@@ -18,17 +18,28 @@ export interface Options {
    * An option if the log type should be shown as a badge
    */
   isBadge?: boolean
+  /**
+   * Trailing newline
+   */
+  newline?: boolean
 }
 
-export function createFormatter (iconOrType: string, iconColor: Color, options?: Options) {
-  const iconFormatter = options?.isBadge ? createBadge : createIcon;
+export function createFormatter (iconOrType: string, iconColor: Color, {
+  target = console.log,
+  textColor,
+  isBadge,
+  newline,
+}: Options = {}) {
+  const iconFormatter = isBadge ? createBadge : createIcon;
   // eslint-disable-next-line import/namespace
-  const textColorFormatter = options?.textColor ? colors[options.textColor] : colors[iconColor];
-  const target = options?.target || console.log;
+  const textColorFormatter = textColor ? colors[textColor] : colors[iconColor];
 
   return (...messages: any[]) => {
     const formattedMessages = formatMessage(messages);
-    target(`${iconFormatter(iconOrType, iconColor)} ${textColorFormatter(formattedMessages.join(" "))}\n`);
+    const icon = iconFormatter(iconOrType, iconColor);
+    for (const message of formattedMessages) {
+      target(`${icon} ${textColorFormatter(message)}${newline ? "\n" : ""}`);
+    }
   };
 }
 

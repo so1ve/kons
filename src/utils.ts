@@ -22,13 +22,18 @@ function formatStack (stack: string) {
     .join("\n")}`;
 }
 
+const NEWLINE_RE = /\r?\n/g;
+
 export function formatMessage (messages: any[]) {
   return messages.map((m) => {
     if (typeof m?.stack === "string") {
-      return `${m.message}\n${formatStack(m.stack)}`;
+      return [m.message, formatStack(m.stack)];
+    }
+    if (typeof m === "string") {
+      return m.split(NEWLINE_RE);
     }
     return m;
-  });
+  }).flat();
 }
 
 export const bracket = (x: string) => x ? `[${x}]` : "";

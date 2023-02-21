@@ -13,18 +13,28 @@ export interface Options {
    * Log text color, default to bgColor
    */
   textColor?: Color
+  /**
+   * Trailing newline
+   */
+  newline?: boolean
 }
 
-export function createFormatter (type: string, bgColor: Color, options?: Options) {
+export function createFormatter (type: string, bgColor: Color, {
+  target = console.log,
+  textColor,
+  newline = true,
+}: Options = {}) {
   // eslint-disable-next-line import/namespace
   const bgColorFormatter = colors[bgColor];
   // eslint-disable-next-line import/namespace
-  const textColorFormatter = options?.textColor ? colors[options.textColor] : bgColorFormatter;
-  const target = options?.target || console.log;
+  const textColorFormatter = textColor ? colors[textColor] : bgColorFormatter;
 
   return (...messages: any[]) => {
     const formattedMessages = formatMessage(messages);
-    target(`${createBadge(type, bgColor)} ${textColorFormatter(formattedMessages.join(" "))}\n`);
+    const badge = createBadge(type, bgColor);
+    for (const message of formattedMessages) {
+      target(`${badge} ${textColorFormatter(message)}${newline ? "\n" : ""}}`);
+    }
   };
 }
 
