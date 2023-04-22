@@ -33,7 +33,7 @@ export function createFormatter (type: string, bgColor: Color, {
     const formattedMessages = formatMessage(messages);
     const badge = createBadge(type, bgColor);
     for (const message of formattedMessages) {
-      target(`${badge} ${textColorFormatter(message)}${newline ? "\n" : ""}}`);
+      target(`${badge} ${textColorFormatter(message)}${newline ? "\n" : ""}`);
     }
   };
 }
