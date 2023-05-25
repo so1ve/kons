@@ -1,7 +1,7 @@
 {
   "name": "kons",
   "version": "0.7.1",
-  "packageManager": "pnpm@7.9.0",
+  "packageManager": "pnpm@7.32.5",
   "author": "Ray <i@mk1.io> (@so1ve)",
   "description": "An elegant console logger.",
   "keywords": [
@@ -72,7 +72,7 @@
     "eslint": "^8.21.0",
     "jiti": "^1.14.0",
     "pnpm": "^7.9.0",
-    "puild": "1.3.0-test.1",
+    "puild": "1.3.2",
     "rimraf": "^3.0.2",
     "tsx": "^3.8.1",
     "typescript": "^4.7.4",
