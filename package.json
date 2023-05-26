@@ -3,6 +3,7 @@
   "version": "0.7.1",
   "packageManager": "pnpm@8.5.1",
   "author": "Ray <i@mk1.io> (@so1ve)",
+  "type": "module",
   "description": "An elegant console logger.",
   "keywords": [
     "console",
@@ -13,7 +14,6 @@
     "winston",
     "elegant"
   ],
-  "type": "module",
   "homepage": "https://github.com/so1ve/kons#readme",
   "repository": {
     "type": "git",
@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.3",
-    "@so1ve/eslint-config": "^0.81.0",
+    "@so1ve/eslint-config": "^0.93.2",
     "@types/node": "^18.16.6",
     "bumpp": "^9.1.0",
     "eslint": "^8.40.0",
