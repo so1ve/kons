@@ -4,29 +4,21 @@ import type { Color, Fn } from "./types";
 import { createBadge, formatMessage } from "./utils";
 
 export interface Options {
-  /**
-   * Log target.
-   * A function that accepts a string
-   */
-  target?: Fn
-  /**
-   * Log text color, default to bgColor
-   */
-  textColor?: Color
-  /**
-   * Trailing newline
-   */
-  newline?: boolean
+  /** Log target. A function that accepts a string */
+  target?: Fn;
+  /** Log text color, default to bgColor */
+  textColor?: Color;
+  /** Trailing newline */
+  newline?: boolean;
 }
 
-export function createFormatter (type: string, bgColor: Color, {
-  target = console.log,
-  textColor,
-  newline = true,
-}: Options = {}) {
-  // eslint-disable-next-line import/namespace
+export function createFormatter(
+  type: string,
+  bgColor: Color,
+  { target = console.log, textColor, newline = true }: Options = {},
+) {
   const bgColorFormatter = colors[bgColor];
-  // eslint-disable-next-line import/namespace
+
   const textColorFormatter = textColor ? colors[textColor] : bgColorFormatter;
 
   return (...messages: any[]) => {
