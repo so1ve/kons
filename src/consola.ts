@@ -1,5 +1,5 @@
-import colors from "picocolors";
 import figures from "figures";
+import colors from "picocolors";
 
 import type { Color, Fn } from "./types";
 import { createBadge, createIcon, formatMessage } from "./utils";
