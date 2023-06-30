@@ -7,12 +7,12 @@
   "description": "An elegant console logger.",
   "keywords": [
     "console",
+    "elegant",
     "logger",
     "reporter",
-    "universal",
     "unified",
-    "winston",
-    "elegant"
+    "universal",
+    "winston"
   ],
   "homepage": "https://github.com/so1ve/kons#readme",
   "repository": {
