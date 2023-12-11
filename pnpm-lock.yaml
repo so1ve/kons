@@ -717,7 +717,7 @@ packages:
       eslint-plugin-import: /eslint-plugin-i@2.27.5-4(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.55.0)
       eslint-plugin-jest-formatting: 3.1.0(eslint@8.55.0)
       eslint-plugin-jsdoc: 46.9.0(eslint@8.55.0)
-      eslint-plugin-json-schema-validator: 4.7.3(eslint@8.55.0)
+      eslint-plugin-json-schema-validator: 4.7.4(eslint@8.55.0)
       eslint-plugin-jsonc: 2.10.0(eslint@8.55.0)
       eslint-plugin-markdown: 3.0.1(eslint@8.55.0)
       eslint-plugin-n: 16.3.1(eslint@8.55.0)
@@ -2408,8 +2408,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-json-schema-validator@4.7.3(eslint@8.55.0):
-    resolution: {integrity: sha512-odFpNM997t484eprsTEk7YTt7JXgZ5ewCIekcOPGJLe5OFGKoRkJWtQ5lUJdRqqaOOD5vE8kGmV8fDvs0h9iNg==}
+  /eslint-plugin-json-schema-validator@4.7.4(eslint@8.55.0):
+    resolution: {integrity: sha512-jgLoOn1G0GMb8qOS+vlzDZwL589cbmOq02yTl1Z4YdDBlicV9qm+u/KYipRBF+6pyTDAfNQn00tLUj8ewxQEAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
