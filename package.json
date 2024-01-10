@@ -1,7 +1,7 @@
 {
   "name": "kons",
   "version": "0.7.1",
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@8.14.1",
   "author": "Ray <i@mk1.io> (@so1ve)",
   "type": "module",
   "description": "An elegant console logger.",
